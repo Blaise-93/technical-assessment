@@ -17,6 +17,8 @@ const config: Config = {
         customError: "#CB1A14",
 
         customLightOrange: "#FBEAE9",
+        
+        customForgotPassword: '#CC400C',
       },
     },
   },

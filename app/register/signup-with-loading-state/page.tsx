@@ -106,7 +106,7 @@ const SignupWithLoadingState = () => {
               Continue with Twitter
             </button>
           </div>
-          <div className="flex items-center justify-between">
+          <div className="flex items-center justify-between left-[183.5px] pr-[16px] pl-[16px]">
             <hr className="w-full border-gray-300" />
             <span className="px-2 text-gray-500">Or</span>
             <hr className="w-full border-gray-300" />
