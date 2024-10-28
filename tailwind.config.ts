@@ -11,6 +11,12 @@ const config: Config = {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        /* respective alerts custom color for the feedback */
+        customOrange: "#AD6F07",
+        customGreen: "#099137",
+        customError: "#CB1A14",
+
+        customLightOrange: "#FBEAE9",
       },
     },
   },
