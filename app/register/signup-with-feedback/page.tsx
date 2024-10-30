@@ -175,6 +175,7 @@ const SignupWithFeedBack = () => {
             <p className="text-gray-500">
               Already here?{" "}
               <Link
+                aria-label="Login to your account"
                 href="/register/login"
                 className="text-blue-500 hover:text-blue-800"
               >

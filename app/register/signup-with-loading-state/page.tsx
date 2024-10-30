@@ -66,8 +66,8 @@ const SignupWithLoadingState = () => {
               />
             </div>
             <button
-                type="submit"
-                className="w-full py-2 px-4 bg-blue-600 text-white font-semibold rounded-md shadow-sm
+              type="submit"
+              className="w-full py-2 px-4 bg-blue-600 text-white font-semibold rounded-md shadow-sm
                  flex justify-center items-center hover:bg-blue-700 focus:outline-none focus:ring-2 
                  focus:ring-offset-2 focus:ring-indigo-500 mb-0"
             >
@@ -115,6 +115,7 @@ const SignupWithLoadingState = () => {
             <p className="text-gray-500">
               Already here?{" "}
               <Link
+                aria-label="Login to your account"
                 href={"/register/login"}
                 className="text-blue-500 hover:text-blue-800"
               >

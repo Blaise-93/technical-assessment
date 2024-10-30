@@ -4,7 +4,7 @@ import googleLogo from "/public/images/google.png";
 import twitterLogo from "/public/images/twitter.png";
 import Link from "next/link";
 
-const Signup = () => {
+const Signup: React.FC  = () => {
   return (
     <section className="bg-gray-100 flex items-center justify-center min-h-screen pt-8 pb-8">
       <div className="">
@@ -105,7 +105,9 @@ const Signup = () => {
           <div className="text-center mb-0">
             <p className="text-gray-500">
               Already here?{" "}
+              
               <Link
+                aria-label="login to your account if you had signed up"
                 href={"/register/login"}
                 className="text-blue-500 hover:text-blue-800"
               >

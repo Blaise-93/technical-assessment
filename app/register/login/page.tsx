@@ -113,6 +113,7 @@ const Login = () => {
             <p className="text-gray-500">
               Are you new here?{" "}
               <Link
+                aria-label="create an account"
                 href={"/register/signup"}
                 className="text-blue-500 hover:text-blue-800"
               >
