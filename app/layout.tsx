@@ -1,22 +1,24 @@
-import type { Metadata } from "next";
-import localFont from "next/font/local";
+
 import "./globals.css";
+import {Inter} from "next/font/google"
 
-const inter = localFont({
-  src: "./fonts/Inter/Inter-VariableFont_opsz,wght.ttf",
-  variable: "--font-inter",
-  weight: "100 900",
-});
-const interSans = localFont({
-  src: "./fonts/Inter/Inter-VariableFont_opsz,wght.ttf",
-  variable: "--font-inter-sans",
-  weight: "100 900",
-});
 
-export const metadata: Metadata = {
+const inter = Inter({
+  subsets:['latin'],
+  variable:'--font-inter'
+})
+
+
+export const metadata = {
   title: "E-Academy Assessment",
   description:
     "E-Academy Frontend Assessment using Figma design to create a user experience website.",
+  robots: [
+    {
+      rel: "stylesheet",
+      href: "https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.0/flowbite.min.css",
+    },
+  ],
 };
 
 export default function RootLayout({
@@ -26,7 +28,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} ${interSans.variable} antialiased`}>
+      <body className={inter.variable}>
         {children}
       </body>
     </html>
