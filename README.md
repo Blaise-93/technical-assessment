@@ -408,6 +408,8 @@ describe("Sign Up with Loading State Section", () => {
 
 ```
 
+To see the test in action, fire on your IDE with `npm run test`.
+
 
 __By writing these tests, we ensure that our Sign Up, Login, and related components work as expected, providing a seamless experience for our users.__
 
