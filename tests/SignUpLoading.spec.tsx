@@ -1,7 +1,5 @@
-import {screen, render} from "@testing-library/react"
-
-import SignupWithLoadingState from "@/app/register/signup-with-loading-state/page";
-
+import { screen, render } from "@testing-library/react";
+import SignupWithLoadingState from "app/register/signup-with-loading-state/page";
 
 describe("Sign Up with Loading State Section", () => {
   beforeEach(() => {
@@ -39,4 +37,3 @@ describe("Sign Up with Loading State Section", () => {
     expect(submitButton).toBeTruthy();
   });
 });
-  
