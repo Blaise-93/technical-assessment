@@ -258,10 +258,161 @@ The login section allows users to access their existing accounts. It includes in
             placeholder="Enter Password
 ```
 
+# Jasmine Tests for E-Academy
+**Why Write Tests?**:
+
+Writing tests is crucial for ensuring the reliability and stability of your application. Tests help catch bugs early, provide documentation for your code, and give you confidence when making changes or adding new features. By writing tests, you can:
+
+- Ensure Code Quality: Automated tests help maintain high code quality by catching errors before they reach production.
+- Facilitate Refactoring: With a robust test suite, you can refactor code with confidence, knowing that any breaking changes will be caught.
+- Improve Collaboration: Tests serve as documentation for your code, making it easier for new developers to understand and contribute.
+- Enhance User Experience: By testing user interactions, you ensure that your application behaves as expected, providing a smooth experience for users.
+
+## Jasmine Test Cases in our Assessment
+**Sign Up Section**: 
+The Sign Up section tests ensure that all essential elements are present and functioning correctly.
+
+```jsx
+describe("Sign Up Section", () => {
+  beforeEach(() => {
+    // Render the Sign Up component
+    render(<SignUp />);
+  });
+
+  it("should display the header", () => {
+    const header = screen.getByText("E-Academy");
+    expect(header).toBeTruthy();
+  });
+
+  it("should have an email input", () => {
+    const emailInput = screen.getByLabelText("Email address");
+    expect(emailInput).toBeTruthy();
+  });
+
+  it("should have a password input", () => {
+    const passwordInput = screen.getByLabelText("Password");
+    expect(passwordInput).toBeTruthy();
+  });
+
+  it("should have a confirm password input", () => {
+    const confirmPasswordInput = screen.getByLabelText("Confirm Password");
+    expect(confirmPasswordInput).toBeTruthy();
+  });
+
+  it("should have a submit button", () => {
+    const submitButton = screen.getByText("Create an account");
+    expect(submitButton).toBeTruthy();
+  });
+});
+
+```
+
+**Sign Up with Feedback Section**: 
+
+These tests ensure that the Sign Up with Feedback component displays alerts and handles user interactions correctly.
+
+```jsx
+describe("Sign Up with Feedback Section", () => {
+  beforeEach(() => {
+    // Render the Sign Up with Feedback component
+    render(<SignUpWithFeedback />);
+  });
+
+  it("should display the header", () => {
+    const header = screen.getByText("E-Academy");
+    expect(header).toBeTruthy();
+  });
+
+  it("should display alerts", () => {
+    const alerts = screen.getAllByText("A placeholder for alert");
+    expect(alerts.length).toBe(3); // Expect three alerts to be present
+  });
+
+  it("should remove an alert when the close button is clicked", () => {
+    const closeButton = screen.getAllByRole("button", { name: /alert icon/i })[0];
+    fireEvent.click(closeButton);
+    const alerts = screen.queryAllByText("A placeholder for alert");
+    expect(alerts.length).toBe(2); // Expect two alerts after one is closed
+  });
+
+  it("should have an email input", () => {
+    const emailInput = screen.getByLabelText("Email address");
+    expect(emailInput).toBeTruthy();
+  });
+
+  it("should have a password input", () => {
+    const passwordInput = screen.getByLabelText("Password");
+    expect(passwordInput).toBeTruthy();
+  });
+
+  it("should have a confirm password input", () => {
+    const confirmPasswordInput = screen.getByLabelText("Confirm Password");
+    expect(confirmPasswordInput).toBeTruthy();
+  });
+
+  it("should have a submit button", () => {
+    const submitButton = screen.getByText("Create an account");
+    expect(submitButton).toBeTruthy();
+  });
+});
+
+```
+
+**Sign Up with Loading State Section**
+These tests ensure that the Sign Up with Loading State component handles loading states correctly.
+
+```jsx
+describe("Sign Up with Loading State Section", () => {
+  beforeEach(() => {
+    // Render the Sign Up with Loading State component
+    render(<SignUpWithLoading />);
+  });
+
+  it("should display the header", () => {
+    const header = screen.getByText("E-Academy");
+    expect(header).toBeTruthy();
+  });
+
+  it("should show loading spinner during submission", () => {
+    const submitButton = screen.getByText("Create an account");
+    fireEvent.click(submitButton);
+    const loadingSpinner = screen.getByTestId("loading-spinner");
+    expect(loadingSpinner).toBeTruthy();
+  });
+});
+
+```
+
+**Sign Up with Loading State Section**:
+
+These tests ensure that the Sign Up with Loading State component handles loading states correctly.
+```jsx
+describe("Sign Up with Loading State Section", () => {
+  beforeEach(() => {
+    // Render the Sign Up with Loading State component
+    render(<SignUpWithLoading />);
+  });
+
+  it("should display the header", () => {
+    const header = screen.getByText("E-Academy");
+    expect(header).toBeTruthy();
+  });
+
+  it("should show loading spinner during submission", () => {
+    const submitButton = screen.getByText("Create an account");
+    fireEvent.click(submitButton);
+    const loadingSpinner = screen.getByTestId("loading-spinner");
+    expect(loadingSpinner).toBeTruthy();
+  });
+});
+
+```
 
 
+__By writing these tests, we ensure that our Sign Up, Login, and related components work as expected, providing a seamless experience for our users.__
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+Open [web live page](https://fastidious-naiad-dfd028.netlify.app/) with your browser to see the result.
 
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
